@@ -1,0 +1,122 @@
+table:
+  name: images
+  schema: public
+object_relationships:
+- name: collection
+  using:
+    foreign_key_constraint_on: collection_id
+- name: profile
+  using:
+    foreign_key_constraint_on: profile_id
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - collection_id
+    - description
+    - meta
+    - name
+    - path
+    - profile_id
+    - status
+    set:
+      profile_id: x-hasura-user-id
+  role: me
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - collection_id
+    - description
+    - meta
+    - path
+    set:
+      profile_id: x-hasura-user-id
+  role: user
+select_permissions:
+- permission:
+    allow_aggregations: true
+    columns:
+    - description
+    - meta
+    - name
+    - path
+    - status
+    - created_at
+    - updated_at
+    - collection_id
+    - id
+    - profile_id
+    filter: {}
+  role: me
+- permission:
+    allow_aggregations: true
+    columns:
+    - collection_id
+    - created_at
+    - description
+    - id
+    - name
+    - path
+    - status
+    - updated_at
+    filter: {}
+  role: public
+- permission:
+    allow_aggregations: true
+    columns:
+    - description
+    - meta
+    - name
+    - path
+    - status
+    - created_at
+    - updated_at
+    - collection_id
+    - id
+    - profile_id
+    filter:
+      profile_id:
+        _eq: X-Hasura-User-Id
+  role: user
+update_permissions:
+- permission:
+    check:
+      profile_id:
+        _eq: X-Hasura-User-Id
+    columns:
+    - collection_id
+    - description
+    - meta
+    - name
+    - path
+    - status
+    filter:
+      profile_id:
+        _eq: X-Hasura-User-Id
+  role: me
+- permission:
+    check:
+      profile_id:
+        _eq: X-Hasura-User-Id
+    columns:
+    - collection_id
+    - meta
+    - path
+    - status
+    filter:
+      profile_id:
+        _eq: X-Hasura-User-Id
+  role: user
+delete_permissions:
+- permission:
+    filter:
+      profile_id:
+        _eq: X-Hasura-User-Id
+  role: me
+- permission:
+    filter:
+      profile_id:
+        _eq: X-Hasura-User-Id
+  role: user

@@ -1,0 +1,99 @@
+table:
+  name: options
+  schema: public
+object_relationships:
+- name: profile
+  using:
+    foreign_key_constraint_on: profile_id
+- name: site
+  using:
+    foreign_key_constraint_on: site_id
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - key
+    - site_id
+    - status
+    - value
+    set:
+      profile_id: x-hasura-user-id
+  role: me
+select_permissions:
+- permission:
+    allow_aggregations: true
+    columns:
+    - value
+    - key
+    - status
+    - created_at
+    - updated_at
+    - id
+    - profile_id
+    - site_id
+    filter: {}
+  role: me
+- permission:
+    allow_aggregations: true
+    columns:
+    - created_at
+    - id
+    - key
+    - site_id
+    - status
+    - updated_at
+    - value
+    filter: {}
+  role: public
+- permission:
+    allow_aggregations: true
+    columns:
+    - value
+    - key
+    - status
+    - created_at
+    - updated_at
+    - id
+    - profile_id
+    - site_id
+    filter: {}
+  role: user
+update_permissions:
+- permission:
+    check:
+      profile_id:
+        _eq: X-Hasura-User-Id
+    columns:
+    - key
+    - site_id
+    - status
+    - value
+    filter:
+      profile_id:
+        _eq: X-Hasura-User-Id
+  role: me
+- permission:
+    check:
+      profile_id:
+        _eq: X-Hasura-User-Id
+    columns:
+    - key
+    - site_id
+    - status
+    - value
+    filter:
+      profile_id:
+        _eq: X-Hasura-User-Id
+  role: user
+delete_permissions:
+- permission:
+    filter:
+      profile_id:
+        _eq: X-Hasura-User-Id
+  role: me
+- permission:
+    filter:
+      profile_id:
+        _eq: X-Hasura-User-Id
+  role: user

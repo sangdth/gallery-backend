@@ -1,0 +1,8 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- DROP TRIGGER IF EXISTS trigger_sync ON auth.users;
+--
+-- CREATE TRIGGER trigger_sync
+--      AFTER INSERT ON auth.users
+--      FOR EACH ROW
+--      EXECUTE PROCEDURE sync_user_profile();

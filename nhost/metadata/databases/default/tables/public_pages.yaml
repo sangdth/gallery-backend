@@ -44,15 +44,16 @@ select_permissions:
 - permission:
     allow_aggregations: true
     columns:
-    - name
-    - slug
-    - status
-    - created_at
-    - updated_at
     - collection_id
+    - content
+    - created_at
     - id
+    - name
     - profile_id
     - site_id
+    - slug
+    - status
+    - updated_at
     filter:
       profile_id:
         _eq: X-Hasura-User-Id
@@ -61,6 +62,7 @@ select_permissions:
     allow_aggregations: true
     columns:
     - collection_id
+    - content
     - created_at
     - id
     - name
@@ -74,6 +76,7 @@ select_permissions:
     allow_aggregations: true
     columns:
     - collection_id
+    - content
     - created_at
     - id
     - name

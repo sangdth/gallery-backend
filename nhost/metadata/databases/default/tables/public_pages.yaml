@@ -17,6 +17,8 @@ insert_permissions:
     check: {}
     columns:
     - collection_id
+    - content
+    - id
     - name
     - site_id
     - slug
@@ -29,6 +31,8 @@ insert_permissions:
     check: {}
     columns:
     - collection_id
+    - content
+    - id
     - name
     - site_id
     - slug
@@ -89,6 +93,7 @@ update_permissions:
         _eq: X-Hasura-User-Id
     columns:
     - collection_id
+    - content
     - name
     - site_id
     - slug

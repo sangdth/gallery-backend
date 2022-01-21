@@ -18,7 +18,7 @@ cd gallery-backend
 nhost
 ```
 
-Yes, it's correct, just go to that folder and type `nhost`! If you see something similar this:
+Yes, it's correct, just go to that folder and type `nhost`! If you see something like this:
 ```
 ✔ Your app is running at http://localhost:1337 (Ctrl+C to stop)
 ℹ Emails will be sent to http://localhost:8814

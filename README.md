@@ -27,5 +27,6 @@ Yes, it's correct, just go to that folder and type `nhost`! If you see something
 
 Extra: Get the frontend from here: https://github.com/sangdth/gallery-frontend
 
-## Deploy
+## Deployment
+
 Read more on nhost's documentation: https://docs.nhost.io/get-started

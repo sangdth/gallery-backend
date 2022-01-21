@@ -23,7 +23,7 @@ Yes, it's correct, just go to that folder and type `nhost`! If you see something
 ✔ Your app is running at http://localhost:1337 (Ctrl+C to stop)
 ℹ Emails will be sent to http://localhost:8814
 ```
-:tada: Congratulation!
+:tada: Congratulation! :tada:
 
 Extra: Get the frontend from here: https://github.com/sangdth/gallery-frontend
 

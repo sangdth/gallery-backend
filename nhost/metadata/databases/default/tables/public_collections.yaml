@@ -61,9 +61,7 @@ select_permissions:
     - id
     - profile_id
     - site_id
-    filter:
-      profile_id:
-        _eq: X-Hasura-User-Id
+    filter: {}
   role: me
 - permission:
     columns:

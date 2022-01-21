@@ -128,7 +128,7 @@ auth:
   user:
     allowed_roles: user,me
     default_allowed_roles: user,me
-    default_role: user
+    default_role: me
     mfa:
       enabled: false
       issuer: nhost

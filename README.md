@@ -29,4 +29,4 @@ Extra: Get the frontend from here: https://github.com/sangdth/gallery-frontend
 
 ## Deployment
 
-Read more on nhost's doc: https://docs.nhost.io/get-started
+Read more on nhost's docs: https://docs.nhost.io/get-started
